@@ -1,0 +1,73 @@
+.Widgets{
+    display:flex;
+    flex: 1;
+    justify-content: space-between;
+    height: 100%;
+    color: white;
+}
+
+.Widgets:hover{
+    background-color: rgb(40, 15, 64);
+    border-radius: 10px;
+}
+
+.Cards{
+    display:flex;
+    border: 2px solid gray;
+    border-radius: 10px;
+    justify-content: space-between;
+    flex: 1;
+    padding: 10px;
+    box-shadow: 10px 10px 5px 5px rgb(54, 25, 81);
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title{
+    color: gray;
+}
+
+.counter{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.comment{
+    padding-top: 50px;
+}
+
+.right{
+    display: flex;
+}
+
+
+.icon{
+    font-size: 3.5em;
+}
+
+
+.large-card{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    border-radius: 10px;
+    justify-content: space-between;
+    flex: 1;
+    padding: 10px;
+    box-shadow: 10px 10px 5px 5px rgb(54, 25, 81);
+}
+
+.large-bottom{
+    display: flex;
+    font-size: 10em;
+    width: 100%;
+}
+
+.chart{
+    font-size: larger;
+    width: max-content;
+}

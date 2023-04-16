@@ -1,0 +1,44 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Navbar{
+    width:100%;
+    display: flex;
+    overflow: auto;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    border-bottom:1px solid gray;
+    background-color: rgb(8, 2, 87);
+    color: white;
+}
+
+.Home{
+    /* margin: 2px; */
+    padding: 5px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.Home:hover{
+    color: grey;
+}
+
+
+.Search{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    border-radius: 1px;
+}
+.Icon{
+    display:flex;
+    padding: 10px;
+    gap:20px;
+    cursor: pointer;
+}

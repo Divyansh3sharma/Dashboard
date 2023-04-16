@@ -1,0 +1,30 @@
+.Leftbar{
+    flex:2;
+    margin: 0px;
+    padding: 0px;
+    border-right: 1px solid gray;
+    background-color: rgb(110, 110, 241);
+    height:100vh;
+    color: white;
+
+}
+
+.OrderList{
+   list-style: none;
+   margin: 0;
+   padding: 0;  
+}
+li{
+    display: flex;
+    align-items: center;
+    cursor:pointer;
+    margin-bottom: 15px;
+    justify-content: center;
+    padding: 10px;
+    
+}
+
+li:hover{
+    background-color: rgb(70, 70, 234);
+    /* margin-left: 10px; */
+}
