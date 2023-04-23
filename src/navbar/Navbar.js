@@ -8,7 +8,7 @@ import { FaGlobe } from "react-icons/fa";
 function Navbar() {
   return (
     <div className='Navbar'>
-        <div className="Home">Home</div>
+        <div className="Home">HOME</div>
         <div className="Search">
            <div className="Input" >
            <input type="text" placeholder='Search'></input>

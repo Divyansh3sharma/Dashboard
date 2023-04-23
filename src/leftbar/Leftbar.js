@@ -1,6 +1,11 @@
 import React from 'react'
 import leftbar  from './leftbar.css'
-const Leftbar = () => {
+import Form from '../form/Form'
+import { useState } from 'react'
+
+const Leftbar = (props) => {
+  const [openModal, setOpenModal] = useState(false);
+  const {tracker} = props; 
   return (
     <div className='Leftbar'>
      <ul className='OrderList'>
@@ -11,10 +16,13 @@ const Leftbar = () => {
      <li>Notification</li>
      <li>Stats</li>
      <li>Revenue</li>
-     <li>Expenses</li>
-
+     
+     <li>
+     
+      <span  onClick={ () => setOpenModal(true)}>Tracker</span>
+      {openModal && <Form />}
+     </li>
      </ul>
-
     </div>
   )
 }
