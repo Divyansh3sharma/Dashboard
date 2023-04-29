@@ -1,4 +1,5 @@
 .Leftbar{
+    display: flex;
     flex:2;
     margin: 0px;
     padding: 0px;
@@ -27,6 +28,3 @@ li:hover{
     background-color: rgb(70, 70, 234);
     /* margin-left: 10px; */
 }
-
-
-

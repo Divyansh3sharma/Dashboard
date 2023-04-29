@@ -1,11 +1,9 @@
 import React from 'react'
 import leftbar  from './leftbar.css'
-import Form from '../form/Form'
-import { useState } from 'react'
+// import Form from '../form/Form'
+// import { useState } from 'react'
 
-const Leftbar = (props) => {
-  const [openModal, setOpenModal] = useState(false);
-  const {tracker} = props; 
+const Leftbar = ({handleTracker}) => { 
   return (
     <div className='Leftbar'>
      <ul className='OrderList'>
@@ -16,12 +14,7 @@ const Leftbar = (props) => {
      <li>Notification</li>
      <li>Stats</li>
      <li>Revenue</li>
-     
-     <li>
-     
-      <span  onClick={ () => setOpenModal(true)}>Tracker</span>
-      {openModal && <Form />}
-     </li>
+     <li onClick={()=>handleTracker()}>Tracker</li>
      </ul>
     </div>
   )

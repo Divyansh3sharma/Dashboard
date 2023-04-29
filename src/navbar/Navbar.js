@@ -3,12 +3,15 @@ import React from 'react'
 import { FaCog } from "react-icons/fa";
 import { FaComment } from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa";
+// import { Link } from 'react-router-dom';
 
 
 function Navbar() {
   return (
     <div className='Navbar'>
-        <div className="Home">HOME</div>
+        <div className="Home">
+          HOME 
+          </div>
         <div className="Search">
            <div className="Input" >
            <input type="text" placeholder='Search'></input>

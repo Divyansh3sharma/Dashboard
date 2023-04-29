@@ -10,6 +10,8 @@ const Form = () => {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
+    const[Arr,setArr] = useState([]);
+
     const handleChange = (e) => {
         const {name, value} = e.target;
         setFormValues({...formValues, [name]: value });
@@ -18,13 +20,17 @@ const Form = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormErrors(validate(formValues));
+        setArr(Arr => [...Arr,formValues]);
+
+        console.log(formValues);
+        console.log(Arr);
         setIsSubmit(true);
     }
 
     useEffect(() => {
-        console.log(formErrors);
+        // console.log(formErrors);
         if(Object.keys(formErrors).length === 0 && isSubmit){
-            console.log(formValues);
+            // console.log(formValues);
         }
     }, [formErrors]);
 
@@ -41,15 +47,20 @@ const Form = () => {
         if(!values.sprintweek){
             errors.sprintweek = "*Sprint Week is required"
         }
-        if(!values.parentticketno){
-            errors.parentticketno = "*Parent Ticket No Type is required"
-        }
-        else if (!regex.test(values.parentticketno)) {
-            errors.parentticketno = "*This is not a valid Parent Ticket No format!";
-          }
+       
 
           if(!values.tickettype){
             errors.tickettype = "*Ticket Type is required"
+            
+            if(values.tickettype === "Task" || values.tickettype=== "Defect"){
+
+            if(!values.parentticketno){
+                errors.parentticketno = "*Parent Ticket No Type is required"
+            }
+            else if (!regex.test(values.parentticketno)) {
+                errors.parentticketno = "*This is not a valid Parent Ticket No format!";
+              }
+            }
         }
 
         if(!values.ticketno){
@@ -64,7 +75,6 @@ const Form = () => {
         if(!values.comments){
             errors.comments = "Comment is required"
         }
-
 
         return errors;
     }
@@ -85,10 +95,11 @@ const Form = () => {
         <div className="field">
         <label>Sprint Week</label>
         <select name="sprintweek"   value={formValues.sprintweek}  onChange={handleChange} defaultValue={null}>
+            <option>Select</option>
             <option>Week 1</option>
             <option>Week 2</option>
             <option>Week 3</option>
-            <option>Week 4</option>
+            <option>Week 4</option> 
             
         </select>
         </div>
@@ -98,6 +109,7 @@ const Form = () => {
         <div className="field">
         <label>Ticket Type</label>
         <select name="tickettype" value={formValues.tickettype} onChange = {handleChange}>
+            <option>Select</option>
             <option>Story</option>
             <option>Task</option>
             <option>Defect</option>
@@ -116,10 +128,6 @@ const Form = () => {
         </div>
         }
         
-
-
-            
-    
     <div className="field">
     <label>Ticket No</label>
     <input type="text" name = "ticketno" value={formValues.ticketno} onChange={handleChange} />
@@ -135,7 +143,8 @@ const Form = () => {
     <div className="field">
     <label>Status</label>
     <select  name="status" value = {formValues.status} onChange={handleChange}>
-        <option>In Progress</option>
+        <option>Select</option>
+        <option>Completed</option>
         <option>Completed</option>
         <option>Blocked</option>
     </select>
@@ -150,10 +159,36 @@ const Form = () => {
 
     <br></br>
     <button className="btn">Submit</button>
+  
     </div>
+    <table border={1} width = "30%" cellPadding={10}>
+    <tbody>
+        <tr>
+            <td>Sprint</td>
+            <td>Ticket Type</td>
+            <td>Sprint Week</td>
+            <td>Status</td>
+        </tr>
+        {
+        Arr.map(
+            (info, ind) =>{
+                return(
+                    <tr key={ind}>
+                        <td>{info.sprint}</td>
+                        <td>{info.tickettype}</td>
+                        <td>{info.sprintweek}</td>
+                        <td>{info.status}</td>
+                    </tr>
+                )
+            }
+        )
+    }
+    </tbody>
+</table>
 </form>
 </div>
   )
 }
 
 export default Form
+
