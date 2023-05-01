@@ -80,6 +80,7 @@ const Form = () => {
     }
 
   return (
+    <>
     <div className="container">
     <form onSubmit={handleSubmit}>
     <div className="values">
@@ -161,7 +162,10 @@ const Form = () => {
     <button className="btn">Submit</button>
   
     </div>
-    <table border={1} width = "30%" cellPadding={10}>
+    
+</form>
+</div>
+<table border={1} width = "30%" cellPadding={10}>
     <tbody>
         <tr>
             <td>Sprint</td>
@@ -178,6 +182,7 @@ const Form = () => {
                         <td>{info.tickettype}</td>
                         <td>{info.sprintweek}</td>
                         <td>{info.status}</td>
+                        <td>{info.comments}</td>
                     </tr>
                 )
             }
@@ -185,8 +190,7 @@ const Form = () => {
     }
     </tbody>
 </table>
-</form>
-</div>
+</>
   )
 }
 
